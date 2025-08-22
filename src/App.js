@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Loader from "./components/Loader/Loader"; // Assuming you have a Loader component for Suspense fallback
 import { ToastContainer } from "react-toastify"; // For notifications
 import "react-toastify/dist/ReactToastify.css"; // CSS for react-toastify
-
+const title = document.getElementsByTagName("title")[0];
+title.innerHTML = "Dental EMR";
 // Lazy-loaded page components for better performance
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/login"));
