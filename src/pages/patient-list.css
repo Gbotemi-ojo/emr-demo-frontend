@@ -180,3 +180,51 @@
 .indented-cell.patient-name-cell .visit-tag {
     left: 45px; /* Matches the indentation */
 }
+
+/* Critical fixes for smaller screens */
+@media screen and (max-width: 800px) {
+  .patient-table {
+    /* Critical fix: Remove the min-width to allow the table to shrink */
+    min-width: unset;
+  }
+
+  .patient-table thead {
+    display: none;
+  }
+
+  .patient-table,
+  .patient-table tbody,
+  .patient-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .patient-table tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+  
+  /* Ensure the two visible cells are laid out properly */
+  .patient-table td {
+    display: block;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .patient-table tr > *:not(.patient-name-cell):not(.table-actions-cell) {
+    display: none;
+  }
+
+  .table-actions-cell {
+    padding: 0;
+  }
+  
+  .patient-name-cell {
+    flex: 1; /* Allow the name cell to grow and take up space */
+  }
+}
