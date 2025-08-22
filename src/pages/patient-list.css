@@ -230,11 +230,10 @@
         display: block;
         width: 100%;
     }
-
+  
     .patient-table tr {
         display: flex; /* Use flexbox for the row */
-        justify-content: space-between; /* Pushes content to the edges */
-        align-items: center;
+        align-items: center; /* ALIGNMENT FIX */
         padding: 15px 20px;
         margin-bottom: 10px;
         border: 1px solid var(--border-color);
@@ -251,13 +250,17 @@
     .patient-table tr > *:not(.patient-name-cell):not(.table-actions-cell) {
         display: none;
     }
-
+  
     .table-actions-cell {
         padding: 0;
+        width: 130px; /* NEW: Give the cell a fixed width for consistent spacing */
+        flex-shrink: 0; /* NEW: Prevent it from shrinking */
     }
   
     .patient-name-cell {
         flex-grow: 1; /* Allow the name cell to take up available space */
+        padding-top: 15px !important; /* FIX: Adjust padding for mobile view */
+        min-height: 40px; /* NEW: Ensure enough space for name and tag */
     }
 
     .family-member-row .indented-cell {
@@ -266,5 +269,13 @@
 
     .family-member-row .indented-cell::before {
         left: 10px;
+    }
+    
+    .visit-tag {
+        top: 0; /* FIX: Align tag to the top of the cell */
+    }
+  
+    .indented-cell.patient-name-cell .visit-tag {
+        left: 30px; /* FIX: Align with the new indentation */
     }
 }
