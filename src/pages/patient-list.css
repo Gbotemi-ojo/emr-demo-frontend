@@ -282,3 +282,18 @@
         left: 30px; /* FIX: Align with the new indentation */
     }
 }
+
+@media screen and (max-width: 800px) {
+    /* ... other mobile-specific rules ... */
+
+    .visit-tag {
+        top: 0;
+        font-size: 0.6rem; /* NEW: Reduced font size */
+        padding: 2px 6px; /* NEW: Reduced padding */
+    }
+
+    .indented-cell.patient-name-cell .visit-tag {
+        left: 30px;
+    }
+    
+}
